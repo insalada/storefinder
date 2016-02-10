@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!--<meta name="viewport" content="width=device-width, initial-scale=1">-->
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <!--<meta name="mobile-web-app-capable" content="yes">-->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link href='https://fonts.googleapis.com/css?family=Oxygen:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/autocomplete.min.css">
+    <script src="js/jquery-1.11.3.min.js"></script>
+    <!--<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>-->
+    <!--<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCR9s0Vsg04KrStefJV9gYAGVQhzfvfFlQ&"></script>-->
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/lodash.min.js"></script>
+    <script src="js/angular.min.js"></script>
+    <script src="js/ui-bootstrap-tpls.min.js"></script>
+    <script src="js/angular-simple-logger.min.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?libraries=places"></script>
+    <script src="js/angular-google-maps.min.js"></script>
+    <script src="js/storefinder.js"></script>
+    <script src="js/maps.js"></script>
+    <script src="js/autocomplete.min.js"></script>
+    <!--[if lte IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <title>ipbSoft Store Finder</title>
+</head>
+<body ng-app="ipbsoftMap" ng-controller="mainController" >
+
+    
+    <div class="row visible-xs mainrow">
+        <div class="row mobileTitle"> 
+            <span></span><span>ipbSoft Store Finder</span>
+        </div>
+        <div class="row">&nbsp;</div>
+        <div class="row mainrow">
+
+           <div class="col-xs-12">               
+                <div><input g-places-autocomplete force-selection="true" ng-model="place" class="inputSearchMobile" placeholder="Enter a location"/></div>
+                <div class="box" ng-show="showClose"><span class="linkmobile" ng-click="closePanel()"> < Close </span></div>
+                <div class="box" ng-click="current_location()"><span class="blue_text"><img src="img/arrow.png" alt="sim" class="mini_icon_mobile" > My current location</span></div>
+                
+                <div class="box" ng-repeat="store in stores">
+                    <div class="mobileresult">
+                       <span class="distance">{{getRounded(store.distance)}} kms</span><br>
+                       <img class="route" src="img/route.svg" ng-click="getRouteUrl(store)" data-toggle="tooltip" title="Google Maps Route"></img>
+                            <strong>{{store.street}} {{store.housenr}}</strong><br>
+                            {{store.zip}} {{store.city}}<br>
+                            <a href="tel:{{store.phoneNumber}}">{{store.phoneNumber}}</a><br>
+                        <div class="icons_mobile">
+                            <span class="svg_icon" ng-show="store.wifi" data-toggle="tooltip" title="WiFi Access Point"><img src="img/wifi.svg" alt="WiFi" class="filter_icon"></span>
+                            <span class="svg_icon" ng-show="store.disabled" data-toggle="tooltip" title="Disabled People Access"><img src="img/disabled.svg" alt="Disabled" class="filter_icon"></span>
+                          </div>  
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+   
+    <div class="row hidden-xs">
+           <div class="row"><div class="top_panel"><h1>ipbSoft Store Finder</h1></div></div>
+           <div class="main_panel">
+                <div class="search">
+                 <form ng-submit="autoSearch()" class="form">
+                  <input g-places-autocomplete force-selection="true" ng-model="place" size=35 class="inputSearch" placeholder="Enter a location" />
+                  <span class="search-img" ng-click="autoSearch()"></span>
+                  </form>
+                </div>   
+                
+                <div class="filters">
+                    <span class="blue_text" ng-click="current_location()"><img src="img/arrow.png" alt="sim" class="mini_icon" > My current location </span>
+                    
+                    <div class="divider" ></div>
+                    <span class="svg_icon mini_icon"><img src="img/wifi.svg" alt="WiFi" class="filter_icon"></span>
+                    <span class="filter">WiFi Spot</span> <input type="checkbox" id="wifi" class="check" ng-model="filter.wifi" ng-change="loadMarkers()" class="check">
+                    <div class="divider"></div>
+                    <span class="svg_icon mini_icon"><img src="img/disabled.svg" alt="Disabled" class="filter_icon"></span>                    
+                    <span class="filter">Disabled People Access</span><input type="checkbox" id="disabled" class="check" ng-model="filter.disabled" ng-change="loadMarkers()" class="check">
+                </div>
+            
+                <div class="left_panel"  ng-show="showPanel"> <!--ng-show="showPanel"-->
+                   <span class="link" ng-click="closePanel()"> < Close </span>
+                   <br>
+                   <tr></tr>
+                    <form>
+                      <div class="form-group">
+                        <div class="divider"></div>
+                        <img src="img/route.svg" alt="route" class="route_desktop" ng-click="getRouteUrl(currentStore)" data-toggle="tooltip" title="Google Maps Route">
+                        <h2>Address Details</h2> <br>
+                        <table class="adres">
+                        <tr>
+                            <td class="centered"><img src="img/ipbsoft.png" class="logo"></td>
+                        <td>
+                            <strong>{{currentStore.street}} {{currentStore.housenr}}</strong><br>
+                            {{currentStore.zip}} {{currentStore.city}}<br>
+                            {{currentStore.status}}<br>
+                        </td>
+                        </tr>
+                        </table>
+                        <br>
+                        <div class="icons">
+                            <span class="svg_icon" ng-show="showIcon(currentStore.wifi)" data-toggle="tooltip" title="WiFi Access Point"><img src="img/wifi.svg" alt="WiFi" class="filter_icon"></span>
+                           <span class="svg_icon" ng-show="showIcon(currentStore.disabled)" data-toggle="tooltip" title="Disabled People Access"><img src="img/disabled.svg" alt="Disabled" class="filter_icon"></span>
+                        </div>
+                      </div>
+                    </form>
+                </div>
+            </div>
+            
+            <div class="wait" ng-show="wait"></div>
+            <div id="map" class="scroll">
+               <div id='directions-panel'>
+                    <ui-gmap-google-map id="angular-map" center='map.center' zoom='map.zoom' events='map.events' pan="true">
+                        <ui-gmap-markers models="markers" coords="'self'" click="onClick" options="'options'" type="type" typeOptions="clusterOptions" fit="'false'"></ui-gmap-markers>
+                        <ui-gmap-markers models="groups" coords="'self'" icon="'icon'" click="onClickGroup" options="'options'" ></ui-gmap-markers>
+                        <ui-gmap-circle center="circle.center" stroke="circle.stroke" fill="circle.fill" radius="circle.radius"
+                    visible="circle.visible" geodesic="circle.geodesic" editable="circle.editable" draggable="circle.draggable" clickable="circle.clickable" control="circle.control"></ui-gmap-circle>
+                    </ui-gmap-google-map>
+                </div>
+            </div>
+    </div>
+
+</body> 
+</html>

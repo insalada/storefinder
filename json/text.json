@@ -1,0 +1,111 @@
+{
+     "default": {
+         "value": "en",
+         "description": "default language"
+     },
+     "nl": {
+         "filters": {
+             "value": "Filters",
+             "description": "filters"
+         },
+         "address": {
+             "value": "Adres en contactgegevens",
+             "description": "adres"
+         },
+         "offer_4g": {
+             "value": "4G Offer",
+             "description": "4G Offer"
+         },
+         "offer_sim": {
+             "value": "SIM Offer",
+             "description": "SIM Offer"
+         },
+         "offer_credit": {
+             "value": "Call Credit Offer",
+             "description": "Call Credit Offer"
+         },
+         "close": {
+             "value": "Terug",
+             "description": "Terug"
+         },
+         "location": {
+             "value": "Voer uw locatie in",
+             "description": "Voer uw locatie in"
+         },
+         "current_location": {
+             "value": "Mijn huidige locatie gebruiken",
+             "description": "Mijn huidige locatie gebruiken"
+         },
+         "description": ""
+     },
+     "en": {
+         "filters": {
+             "value": "Filters",
+             "description": "filters"
+         },
+         "address": {
+             "value": "Address Details",
+             "description": "Address Details"
+         },
+         "offer_4g": {
+             "value": "4G Offer",
+             "description": "4G Offer"
+         },
+         "offer_sim": {
+             "value": "SIM Offer",
+             "description": "SIM Offer"
+         },
+         "offer_credit": {
+             "value": "Call Credit Offer",
+             "description": "Call Credit Offer"
+         },
+         "close": {
+             "value": "Close",
+             "description": "Close"
+         },
+         "location": {
+             "value": "Enter a location",
+             "description": "Enter a location"
+         },
+         "current_location": {
+             "value": "Use my current location",
+             "description": "My current location"
+         },
+         "description": ""
+     },
+     "pl": {
+         "filters": {
+             "value": "Filtry",
+             "description": "filters"
+         },
+         "address": {
+             "value": "Adres i kontakt",
+             "description": "address"
+         },
+         "offer_4g": {
+             "value": "4G Oferta",
+             "description": "4G Offer"
+         },
+         "offer_sim": {
+             "value": "SIM Oferta",
+             "description": "SIM Offer"
+         },
+         "offer_credit": {
+             "value": "Call Credit Oferta",
+             "description": "Call Credit Offer"
+         },
+         "close": {
+             "value": "Blisko",
+             "description": "Close pl"
+         },
+         "location": {
+             "value": "Wprowadź swoją lokalizację",
+             "description": "Enter location pl"
+         },
+         "current_location": {
+             "value": "Użyj mojej bieżącej lokalizacji",
+             "description": "Current location"
+         },
+         "description": ""
+     }
+ }
