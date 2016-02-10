@@ -1,6 +1,9 @@
 #What is this?
 I created a fictitious Store Finder webapp that makes use of Angular Google Maps API
 
+![alt tag](https://raw.github.com/insalada/snapshots/master/ipbsoft_store_1.png)
+![alt tag](https://raw.github.com/insalada/snapshots/master/ipbsoft_store_2.png)
+![alt tag](https://raw.github.com/insalada/snapshots/master/ipbsoft_store_mobile.png)
 #What does it do?
 A lot of cool stuff! Such as:
 - Show all the stores in the map with custom icons based on a given json
