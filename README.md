@@ -7,7 +7,8 @@ A lot of cool stuff! Such as:
 - Cluster the stores into groups, based on the zoom level
 - Apply filters
 - Panels showing the store info on events
-- Autosearch, Get Current Location, etc.
+- Autosearch, Get Current Location
+- Mobile friendly
 - Etc
 
 #Technologies
