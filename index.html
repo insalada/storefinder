@@ -47,13 +47,13 @@
                 <div class="box" ng-repeat="store in stores">
                     <div class="mobileresult">
                        <span class="distance">{{getRounded(store.distance)}} kms</span><br>
-                       <img class="route" src="img/route.svg" ng-click="getRouteUrl(store)" data-toggle="tooltip" title="Google Maps Route"></img>
+                       <img class="route" src="img/route.png" ng-click="getRouteUrl(store)" data-toggle="tooltip" title="Google Maps Route"></img>
                             <strong>{{store.street}} {{store.housenr}}</strong><br>
                             {{store.zip}} {{store.city}}<br>
                             <a href="tel:{{store.phoneNumber}}">{{store.phoneNumber}}</a><br>
                         <div class="icons_mobile">
-                            <span class="svg_icon" ng-show="store.wifi" data-toggle="tooltip" title="WiFi Access Point"><img src="img/wifi.svg" alt="WiFi" class="filter_icon"></span>
-                            <span class="svg_icon" ng-show="store.disabled" data-toggle="tooltip" title="Disabled People Access"><img src="img/disabled.svg" alt="Disabled" class="filter_icon"></span>
+                            <span class="svg_icon" ng-show="store.wifi" data-toggle="tooltip" title="WiFi Access Point"><img src="img/wifi.gif" alt="WiFi" class="filter_icon"></span>
+                            <span class="svg_icon" ng-show="store.disabled" data-toggle="tooltip" title="Disabled People Access"><img src="img/disabled.png" alt="Disabled" class="filter_icon"></span>
                           </div>  
                         </div>
                     </div>
@@ -76,10 +76,10 @@
                     <span class="blue_text" ng-click="current_location()"><img src="img/arrow.png" alt="sim" class="mini_icon" > My current location </span>
                     
                     <div class="divider" ></div>
-                    <span class="svg_icon mini_icon"><img src="img/wifi.svg" alt="WiFi" class="filter_icon"></span>
+                    <span class="svg_icon mini_icon"><img src="img/wifi.gif" alt="WiFi" class="filter_icon"></span>
                     <span class="filter">WiFi Spot</span> <input type="checkbox" id="wifi" class="check" ng-model="filter.wifi" ng-change="loadMarkers()" class="check">
                     <div class="divider"></div>
-                    <span class="svg_icon mini_icon"><img src="img/disabled.svg" alt="Disabled" class="filter_icon"></span>                    
+                    <span class="svg_icon mini_icon"><img src="img/disabled.png" alt="Disabled" class="filter_icon"></span>                    
                     <span class="filter">Disabled People Access</span><input type="checkbox" id="disabled" class="check" ng-model="filter.disabled" ng-change="loadMarkers()" class="check">
                 </div>
             
@@ -90,7 +90,7 @@
                     <form>
                       <div class="form-group">
                         <div class="divider"></div>
-                        <img src="img/route.svg" alt="route" class="route_desktop" ng-click="getRouteUrl(currentStore)" data-toggle="tooltip" title="Google Maps Route">
+                        <img src="img/route.png" alt="route" class="route_desktop" ng-click="getRouteUrl(currentStore)" data-toggle="tooltip" title="Google Maps Route">
                         <h2>Address Details</h2> <br>
                         <table class="adres">
                         <tr>
@@ -104,8 +104,8 @@
                         </table>
                         <br>
                         <div class="icons">
-                            <span class="svg_icon" ng-show="showIcon(currentStore.wifi)" data-toggle="tooltip" title="WiFi Access Point"><img src="img/wifi.svg" alt="WiFi" class="filter_icon"></span>
-                           <span class="svg_icon" ng-show="showIcon(currentStore.disabled)" data-toggle="tooltip" title="Disabled People Access"><img src="img/disabled.svg" alt="Disabled" class="filter_icon"></span>
+                            <span class="svg_icon" ng-show="showIcon(currentStore.wifi)" data-toggle="tooltip" title="WiFi Access Point"><img src="img/wifi.gif" alt="WiFi" class="filter_icon"></span>
+                           <span class="svg_icon" ng-show="showIcon(currentStore.disabled)" data-toggle="tooltip" title="Disabled People Access"><img src="img/disabled.png" alt="Disabled" class="filter_icon"></span>
                         </div>
                       </div>
                     </form>
