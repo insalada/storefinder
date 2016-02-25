@@ -2,43 +2,34 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <!--<meta name="viewport" content="width=device-width, initial-scale=1">-->
     <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
-    <!--<meta name="mobile-web-app-capable" content="yes">-->
-    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
     <link href='https://fonts.googleapis.com/css?family=Oxygen:400,700' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/autocomplete.min.css">
-    <script src="js/jquery-1.11.3.min.js"></script>
-    <!--<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>-->
-    <!--<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCR9s0Vsg04KrStefJV9gYAGVQhzfvfFlQ&"></script>-->
-    <script src="js/bootstrap.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
     <script src="js/lodash.min.js"></script>
-    <script src="js/angular.min.js"></script>
-    <script src="js/ui-bootstrap-tpls.min.js"></script>
+    <script src="https://code.angularjs.org/1.4.7/angular.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/1.1.2/ui-bootstrap-tpls.min.js"></script>
     <script src="js/angular-simple-logger.min.js"></script>
     <script src="https://maps.googleapis.com/maps/api/js?libraries=places"></script>
-    <script src="js/angular-google-maps.min.js"></script>
+    <script src="https://rawgit.com/angular-ui/angular-google-maps/2.3.2/dist/angular-google-maps.min.js"></script>
     <script src="js/storefinder.js"></script>
-    <script src="js/maps.js"></script>
     <script src="js/autocomplete.min.js"></script>
     <!--[if lte IE 9]>
     <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
-
     <title>ipbSoft Store Finder</title>
 </head>
 <body ng-app="ipbsoftMap" ng-controller="mainController" >
-
-    
     <div class="row visible-xs mainrow">
         <div class="row mobileTitle"> 
             <span></span><span>ipbSoft Store Finder</span>
         </div>
         <div class="row">&nbsp;</div>
         <div class="row mainrow">
-
            <div class="col-xs-12">               
                 <div><input g-places-autocomplete force-selection="true" ng-model="place" class="inputSearchMobile" placeholder="Enter a location"/></div>
                 <div class="box" ng-show="showClose"><span class="linkmobile" ng-click="closePanel()"> < Close </span></div>
@@ -61,7 +52,6 @@
             </div>
         </div>
     </div>
-   
     <div class="row hidden-xs">
            <div class="row"><div class="top_panel"><h1>ipbSoft Store Finder</h1></div></div>
            <div class="main_panel">
@@ -71,7 +61,6 @@
                   <span class="search-img" ng-click="autoSearch()"></span>
                   </form>
                 </div>   
-                
                 <div class="filters">
                     <span class="blue_text" ng-click="current_location()"><img src="img/arrow.png" alt="sim" class="mini_icon" > My current location </span>
                     
@@ -82,7 +71,6 @@
                     <span class="svg_icon mini_icon"><img src="img/disabled.svg" alt="Disabled" class="filter_icon"></span>                    
                     <span class="filter">Disabled People Access</span><input type="checkbox" id="disabled" class="check" ng-model="filter.disabled" ng-change="loadMarkers()" class="check">
                 </div>
-            
                 <div class="left_panel"  ng-show="showPanel"> <!--ng-show="showPanel"-->
                    <span class="link" ng-click="closePanel()"> < Close </span>
                    <br>
@@ -111,7 +99,6 @@
                     </form>
                 </div>
             </div>
-            
             <div class="wait" ng-show="wait"></div>
             <div id="map" class="scroll">
                <div id='directions-panel'>
@@ -124,6 +111,5 @@
                 </div>
             </div>
     </div>
-
 </body> 
 </html>
