@@ -255,10 +255,13 @@ ipbsoftMap
                         });
                       
                   }, function(error) {
-                        console.log('current position error');
-                        $scope.wait = false;
+                        console.log('current position error:');
+                        console.log(error.message);
+                        $scope.$apply(function () {
+                            $scope.wait = false;
+                        });
                     },
-                  {timeout: 5000}                                          
+                  {timeout: 8000}                                          
                 );
             }
             else {

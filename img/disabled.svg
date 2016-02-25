@@ -4,7 +4,7 @@
 	<!ENTITY ns_svg "http://www.w3.org/2000/svg">
 	<!ENTITY ns_xlink "http://www.w3.org/1999/xlink">
 ]>
-<svg  version="1.1" id="Layer_1" xmlns="&ns_svg;" xmlns:xlink="&ns_xlink;" width="483.2226563" height="551.4306641"
+<svg  version="1.1" id="Layer_1" width="483.2226563" height="551.4306641"
 	 viewBox="0 0 483.2226563 551.4306641" overflow="visible" enable-background="new 0 0 483.2226563 551.4306641"
 	 xml:space="preserve">
 <path fill-rule="evenodd" clip-rule="evenodd" fill="#C3C3C3" d="M161.9882813,98.1240234
